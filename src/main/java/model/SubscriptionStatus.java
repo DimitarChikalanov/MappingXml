@@ -1,5 +1,6 @@
 package model;
 
+
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
@@ -8,9 +9,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@JacksonXmlRootElement(localName =  "SubscriptionStatus")
+
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SubscriptionStatus {
+public class SubscriptionStatus   {
 
   @JacksonXmlProperty(localName = "subscriptionType")
   private String itemType;
@@ -41,10 +42,10 @@ public class SubscriptionStatus {
 
   @JacksonXmlProperty(localName = "itemID")
   private String itemId;
-
+///////////////
   @JacksonXmlProperty(localName = "freeTrial")
-  private String freeTrial;
-
+  private boolean freeTrial;
+//////////
   @JacksonXmlProperty(localName = "latestOrderId")
   private String latestOrderId;
 
@@ -59,7 +60,7 @@ public class SubscriptionStatus {
 
   public SubscriptionStatus() {}
 
-    public String getItemType() {
+  public String getItemType() {
     return itemType;
   }
 
@@ -139,12 +140,12 @@ public class SubscriptionStatus {
     this.itemId = itemId;
   }
 
-  public String getFreeTrial() {
+  public Boolean getFreeTrial() {
     return freeTrial;
   }
 
   public void setFreeTrial(String freeTrial) {
-    this.freeTrial = freeTrial;
+    this.freeTrial = freeTrial.equalsIgnoreCase("Y")?true:false;
   }
 
   public String getLatestOrderId() {
