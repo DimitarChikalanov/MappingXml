@@ -2,7 +2,7 @@ package model;
 
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,7 +14,7 @@ import java.util.Date;
 public class SubscriptionStatus   {
 
   @JacksonXmlProperty(localName = "subscriptionType")
-  private String itemType;
+  private ItemType itemType;
 
   @JacksonXmlProperty(localName = "subscriptionStatus")
   private ItemStatus itemStatus;
@@ -42,10 +42,10 @@ public class SubscriptionStatus   {
 
   @JacksonXmlProperty(localName = "itemID")
   private String itemId;
-///////////////
+
   @JacksonXmlProperty(localName = "freeTrial")
   private boolean freeTrial;
-//////////
+
   @JacksonXmlProperty(localName = "latestOrderId")
   private String latestOrderId;
 
@@ -60,11 +60,11 @@ public class SubscriptionStatus   {
 
   public SubscriptionStatus() {}
 
-  public String getItemType() {
+  public ItemType getItemType() {
     return itemType;
   }
 
-  public void setItemType(String itemType) {
+  public void setItemType(ItemType itemType) {
     this.itemType = itemType;
   }
 
