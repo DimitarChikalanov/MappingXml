@@ -56,7 +56,7 @@ public class SubscriptionStatus   {
     private Integer totalNumberOfRenewalPayment;
 
     @JacksonXmlProperty(localName = "realMode")
-    private String more;
+    private Boolean more;
 
   public SubscriptionStatus() {}
 
@@ -172,12 +172,12 @@ public class SubscriptionStatus   {
     this.totalNumberOfRenewalPayment = totalNumberOfRenewalPayment;
   }
 
-  public String getMore() {
+  public Boolean getMore() {
     return more;
   }
 
   public void setMore(String more) {
-    this.more = more;
+    this.more = more.equalsIgnoreCase("Y")?true:false;
   }
 
   @Override
